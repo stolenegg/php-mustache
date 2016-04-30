@@ -2,16 +2,34 @@
 #ifndef PHP_MUSTACHE_PRIVATE_HPP
 #define PHP_MUSTACHE_PRIVATE_HPP
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef __cplusplus
    extern "C" {
 #endif
 
 #include "php_mustache.h"
 
+#include <main/php_ini.h>
+#include <main/php_variables.h>
+#include <main/php_globals.h>
+#include <main/SAPI.h>
+#include <ext/standard/info.h>
+#include <Zend/zend_interfaces.h>
+#include <Zend/zend_exceptions.h>
+#include <Zend/zend_extensions.h>
+#include <Zend/zend_compile.h>
+#include <Zend/zend_closures.h>
+
+#ifndef __STDC_LIMIT_MACROS
+#define __STDC_LIMIT_MACROS
+#endif
 #include <stdint.h>
 
 #if PHP_MAJOR_VERSION >= 7
-#include <zend_string.h>
+#include <Zend/zend_string.h>
 #endif
 
 #if PHP_MAJOR_VERSION < 7
@@ -72,3 +90,11 @@ typedef size_t strsize_t;
 
 #endif /* PHP_MUSTACHE_PRIVATE_HPP */
 
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * End:
+ * vim600: fdm=marker
+ * vim: et sw=4 ts=4
+ */

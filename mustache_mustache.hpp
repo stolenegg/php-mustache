@@ -3,10 +3,10 @@
 #define PHP_MUSTACHE_MUSTACHE_HPP
 
 #ifdef __cplusplus
-   extern "C" {
+extern "C" {
 #endif
 
-#if PHP_MAJOR_VERSION < 7
+#ifndef ZEND_ENGINE_3
 struct php_obj_Mustache {
     zend_object std;
     mustache::Mustache * mustache;
@@ -46,8 +46,16 @@ PHP_METHOD(Mustache, tokenize);
 PHP_METHOD(Mustache, debugDataStructure);
 
 #ifdef __cplusplus
-  } // extern "C" 
+} // extern "C"
 #endif
 
 #endif /* PHP_MUSTACHE_MUSTACHE_HPP */
 
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * End:
+ * vim600: fdm=marker
+ * vim: et sw=4 ts=4
+ */

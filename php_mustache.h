@@ -3,7 +3,7 @@
 #define PHP_MUSTACHE_H
 
 #ifdef __cplusplus
-   extern "C" {
+extern "C" {
 #endif
 
 #define PHP_MUSTACHE_NAME "mustache"
@@ -17,25 +17,8 @@
 #define PHP_MUSTACHE_THROW_EXCEPTIONS 0
 #endif
 
-#ifndef __STDC_LIMIT_MACROS
-#define __STDC_LIMIT_MACROS
-#endif
-
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
-#include <php.h>
-#include <php_ini.h>
-#include <php_variables.h>
-#include <php_globals.h>
-#include <SAPI.h>
-#include <ext/standard/info.h>
-#include <Zend/zend_interfaces.h>
-#include <Zend/zend_exceptions.h>
-#include <Zend/zend_extensions.h>
-#include <Zend/zend_compile.h>
-#include <Zend/zend_closures.h>
+#include <Zend/zend_API.h>
+#include <main/php.h>
 
 #ifdef ZTS
 #include "TSRM.h"
@@ -58,10 +41,17 @@ ZEND_END_MODULE_GLOBALS(mustache)
 
 ZEND_EXTERN_MODULE_GLOBALS(mustache);
 
-
 #ifdef __cplusplus
-  } // extern "C" 
+} // extern "C"
 #endif
 
 #endif	/* PHP_MUSTACHE_H */
 
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * End:
+ * vim600: fdm=marker
+ * vim: et sw=4 ts=4
+ */

@@ -3,10 +3,10 @@
 #define PHP_MUSTACHE_LAMBDA_HELPER_HPP
 
 #ifdef __cplusplus
-   extern "C" {
+extern "C" {
 #endif
 
-#if PHP_MAJOR_VERSION < 7
+#ifndef ZEND_ENGINE_3
 struct php_obj_MustacheLambdaHelper {
     zend_object std;
     mustache::Renderer * renderer;
@@ -33,3 +33,11 @@ PHP_METHOD(MustacheLambdaHelper, render);
 
 #endif /* PHP_MUSTACHE_LAMBDA_HELPER_HPP */
 
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * End:
+ * vim600: fdm=marker
+ * vim: et sw=4 ts=4
+ */

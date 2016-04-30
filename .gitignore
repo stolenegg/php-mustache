@@ -2,9 +2,11 @@
 *~
 .deps
 .dirstamp
+.idea
 .libs
 autom4te.cache
 coverage.info
+CMakeLists.txt
 gmon*
 *.a
 *.la

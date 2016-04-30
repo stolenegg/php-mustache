@@ -24,14 +24,14 @@ ZEND_BEGIN_ARG_INFO_EX(MustacheAST____wakeup_args, ZEND_SEND_BY_VAL, ZEND_RETURN
 ZEND_END_ARG_INFO()
 /* }}} */
 
-/* {{{ MustacheAST_methods */
+/* {{{ MustacheAST methods */
 static zend_function_entry MustacheAST_methods[] = {
   PHP_ME(MustacheAST, __construct, MustacheAST____construct_args, ZEND_ACC_PUBLIC | ZEND_ACC_CTOR)
   PHP_ME(MustacheAST, __sleep, MustacheAST____sleep_args, ZEND_ACC_PUBLIC)
   PHP_ME(MustacheAST, toArray, MustacheAST__toArray_args, ZEND_ACC_PUBLIC)
   PHP_ME(MustacheAST, __toString, MustacheAST____toString_args, ZEND_ACC_PUBLIC)
   PHP_ME(MustacheAST, __wakeup, MustacheAST____wakeup_args, ZEND_ACC_PUBLIC)
-  { NULL, NULL, NULL }
+  PHP_FE_END
 };
 /* }}} */
 
@@ -362,7 +362,7 @@ PHP_METHOD(MustacheAST, __toString)
   try {
     // Check parameters
     zval * _this_zval = NULL;
-    if( zend_parse_method_parameters(ZEND_NUM_ARGS() TSRMLS_CC, getThis(), (char *) "O", 
+    if( zend_parse_method_parameters(ZEND_NUM_ARGS() TSRMLS_CC, getThis(), (char *) "O",
             &_this_zval, MustacheAST_ce_ptr) == FAILURE) {
       throw PhpInvalidParameterException();
     }
@@ -422,4 +422,3 @@ PHP_METHOD(MustacheAST, __wakeup)
   }
 }
 /* }}} MustacheAST::__wakeup */
-

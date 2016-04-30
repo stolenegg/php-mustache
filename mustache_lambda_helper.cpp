@@ -19,7 +19,7 @@ ZEND_END_ARG_INFO()
 static zend_function_entry MustacheLambdaHelper_methods[] = {
   PHP_ME(MustacheLambdaHelper, __construct, MustacheLambdaHelper____construct_args, ZEND_ACC_PRIVATE | ZEND_ACC_CTOR)
   PHP_ME(MustacheLambdaHelper, render, MustacheLambdaHelper__render_args, ZEND_ACC_PUBLIC)
-  { NULL, NULL, NULL }
+  PHP_FE_END
 };
 /* }}} */
 

@@ -22,7 +22,7 @@ static zend_function_entry MustacheCode_methods[] = {
   PHP_ME(MustacheCode, __construct, MustacheCode____construct_args, ZEND_ACC_PUBLIC | ZEND_ACC_CTOR)
   PHP_ME(MustacheCode, toReadableString, MustacheCode__toReadableString_args, ZEND_ACC_PUBLIC)
   PHP_ME(MustacheCode, __toString, MustacheCode____toString_args, ZEND_ACC_PUBLIC)
-  { NULL, NULL, NULL }
+  PHP_FE_END
 };
 /* }}} */
 

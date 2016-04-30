@@ -18,7 +18,7 @@ ZEND_END_ARG_INFO()
 static zend_function_entry MustacheTemplate_methods[] = {
   PHP_ME(MustacheTemplate, __construct, MustacheTemplate____construct_args, ZEND_ACC_PUBLIC | ZEND_ACC_CTOR)
   PHP_ME(MustacheTemplate, __toString, MustacheTemplate____toString_args, ZEND_ACC_PUBLIC)
-  { NULL, NULL, NULL }
+  PHP_FE_END
 };
 /* }}} */
 

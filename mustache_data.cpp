@@ -19,7 +19,7 @@ ZEND_END_ARG_INFO()
 static zend_function_entry MustacheData_methods[] = {
   PHP_ME(MustacheData, __construct, MustacheData____construct_args, ZEND_ACC_PUBLIC | ZEND_ACC_CTOR)
   PHP_ME(MustacheData, toValue, MustacheData__toValue_args, ZEND_ACC_PUBLIC)
-  { NULL, NULL, NULL }
+  PHP_FE_END
 };
 /* }}} */
 
