@@ -20,12 +20,11 @@ struct php_obj_MustacheData {
 
 extern zend_class_entry * MustacheData_ce_ptr;
 
-struct php_obj_MustacheData * php_mustache_data_object_fetch_object(zval * zv TSRMLS_DC);
+extern PHPAPI struct php_obj_MustacheData * php_mustache_data_object_fetch_object(zval * zv TSRMLS_DC);
+extern PHPAPI void mustache_data_from_zval(mustache::Data * node, zval * current TSRMLS_DC);
+extern PHPAPI void mustache_data_to_zval(mustache::Data * node, zval * current TSRMLS_DC);
 
 PHP_MINIT_FUNCTION(mustache_data);
-
-void mustache_data_from_zval(mustache::Data * node, zval * current TSRMLS_DC);
-void mustache_data_to_zval(mustache::Data * node, zval * current TSRMLS_DC);
 
 PHP_METHOD(MustacheData, __construct);
 PHP_METHOD(MustacheData, toValue);

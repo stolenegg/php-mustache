@@ -76,19 +76,19 @@ static PHP_GINIT_FUNCTION(mustache)
 /* {{{ mustache_module_entry */
 zend_module_entry mustache_module_entry = {
     STANDARD_MODULE_HEADER,
-    (char *) PHP_MUSTACHE_NAME,    /* Name */
+    PHP_MUSTACHE_NAME,             /* Name */
     NULL,                          /* Functions */
     PHP_MINIT(mustache),           /* MINIT */
     NULL,                          /* MSHUTDOWN */
     NULL,                          /* RINIT */
     NULL,                          /* RSHUTDOWN */
     PHP_MINFO(mustache),           /* MINFO */
-    (char *) PHP_MUSTACHE_VERSION, /* Version */
+    PHP_MUSTACHE_VERSION,          /* Version */
     PHP_MODULE_GLOBALS(mustache),  /* Globals */
     PHP_GINIT(mustache),           /* GINIT */
     NULL,
     NULL,
-    0, 0, NULL, 0, (char *) ZEND_MODULE_BUILD_ID /* STANDARD_MODULE_PROPERTIES_EX */
+    STANDARD_MODULE_PROPERTIES_EX
 };
 /* }}} */
 

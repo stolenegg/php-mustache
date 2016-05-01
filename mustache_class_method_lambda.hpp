@@ -24,11 +24,7 @@ class ClassMethodLambda : public Lambda {
     public:
         ClassMethodLambda(zval * object, const char * function_name_string) : object(object) {
             Z_ADDREF_P(object);
-#ifdef ZEND_ENGINE_3
-            ZVAL_STRING(&function_name, function_name_string);
-#else
-            ZVAL_STRING(&function_name, function_name_string, 1);
-#endif
+            PHP5TO7_ZVAL_STRING(&function_name, function_name_string);
         };
         ~ClassMethodLambda();
 };

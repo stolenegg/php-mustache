@@ -13,10 +13,6 @@ extern "C" {
 #define PHP_MUSTACHE_AUTHORS "John Boehr <jbboehr@gmail.com> (lead)"
 #define PHP_MUSTACHE_SPEC "1.1.2"
 
-#ifndef PHP_MUSTACHE_THROW_EXCEPTIONS
-#define PHP_MUSTACHE_THROW_EXCEPTIONS 0
-#endif
-
 #include <Zend/zend_API.h>
 #include <main/php.h>
 

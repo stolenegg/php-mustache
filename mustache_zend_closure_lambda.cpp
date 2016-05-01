@@ -19,14 +19,14 @@ int ZendClosureLambda::getUserFunctionParamCount()
 }
 
 #ifdef ZEND_ENGINE_3
-int ZendClosureLambda::invokeUserFunction(zval *retval_ptr, int param_count, zval params[])
+int ZendClosureLambda::invokeUserFunction(zval * retval_ptr, int param_count, zval params[])
 {
     return call_user_function_ex(CG(function_table), NULL, closure, retval_ptr, param_count, params, 1, NULL);
 }
 #else
-int ZendClosureLambda::invokeUserFunction(zval **retval_ptr_ptr, int param_count, zval **params[] TSRMLS_DC)
+int ZendClosureLambda::invokeUserFunction(zval ** retval_ptr_ptr, int param_count, zval ** params[] TSRMLS_DC)
 {
-  return call_user_function_ex(CG(function_table), NULL, closure, retval_ptr_ptr, param_count, params, 1, NULL TSRMLS_CC);
+    return call_user_function_ex(CG(function_table), NULL, closure, retval_ptr_ptr, param_count, params, 1, NULL TSRMLS_CC);
 }
 #endif
 

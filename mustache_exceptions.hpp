@@ -9,22 +9,13 @@ extern "C" {
 extern zend_class_entry * MustacheException_ce_ptr;
 extern zend_class_entry * MustacheParserException_ce_ptr;
 
-PHP_MINIT_FUNCTION(mustache_exceptions);
+extern PHPAPI void mustache_exception_handler(TSRMLS_D);
 
-void mustache_exception_handler(TSRMLS_D);
+PHP_MINIT_FUNCTION(mustache_exceptions);
 
 #ifdef __cplusplus
 } // extern "C"
 #endif
-
-class PhpInvalidParameterException : public std::exception {
-    public:
-};
-
-class InvalidParameterException : public std::runtime_error {
-    public:
-        InvalidParameterException(const std::string& desc) : std::runtime_error(desc) { }
-};
 
 #endif /* PHP_MUSTACHE_EXCEPTIONS_HPP */
 

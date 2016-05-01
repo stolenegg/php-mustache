@@ -20,11 +20,10 @@ struct php_obj_MustacheAST {
 
 extern zend_class_entry * MustacheAST_ce_ptr;
 
-void mustache_node_from_binary_string(mustache::Node ** node, char * str, int len);
-void mustache_node_to_binary_string(mustache::Node * node, char ** estr, int * elen);
-void mustache_node_to_zval(mustache::Node * node, zval * current TSRMLS_DC);
-
-struct php_obj_MustacheAST * php_mustache_ast_object_fetch_object(zval * zv TSRMLS_DC);
+extern PHPAPI void mustache_node_from_binary_string(mustache::Node ** node, char * str, int len);
+extern PHPAPI void mustache_node_to_binary_string(mustache::Node * node, char ** estr, int * elen);
+extern PHPAPI void mustache_node_to_zval(mustache::Node * node, zval * current TSRMLS_DC);
+extern PHPAPI struct php_obj_MustacheAST * php_mustache_ast_object_fetch_object(zval * zv TSRMLS_DC);
 
 PHP_MINIT_FUNCTION(mustache_ast);
 

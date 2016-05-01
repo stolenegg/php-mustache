@@ -20,7 +20,7 @@ struct php_obj_MustacheLambdaHelper {
 
 extern zend_class_entry * MustacheLambdaHelper_ce_ptr;
 
-struct php_obj_MustacheLambdaHelper * php_mustache_lambda_helper_object_fetch_object(zval * zv TSRMLS_DC);
+extern PHPAPI struct php_obj_MustacheLambdaHelper * php_mustache_lambda_helper_object_fetch_object(zval * zv TSRMLS_DC);
 
 PHP_MINIT_FUNCTION(mustache_lambda_helper);
 
