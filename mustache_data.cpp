@@ -571,8 +571,10 @@ void mustache_data_from_zval(mustache::Data * node, zval * current TSRMLS_DC)
           node->val = new std::string();
           break;
       case IS_LONG:
+          long long int x;
+          x = Z_LVAL_P(current);
           node->type = mustache::Data::TypeString;
-          node->val = new std::string(std::to_string(Z_LVAL_P(current)));
+          node->val = new std::string(std::to_string(x));
           break;
 #if PHP_MAJOR_VERSION < 7
       case IS_BOOL:
